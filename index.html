@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Fortyron.cz – Informace pro zákazníky a právní dokumenty</title>
+<style>
+:root{
+  --bg:#f4f6f9;--surface:#ffffff;--surface-2:#eef1f6;--text:#14181f;--muted:#5d6676;
+  --brand:#c2410c;--brand-2:#9a3412;--border:#dde2ea;--head-from:#111827;--head-to:#3b1d0e;
+  --shadow:0 6px 22px rgba(20,24,31,.07);--radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#0d1016;--surface:#151a23;--surface-2:#1c2330;--text:#e8ecf2;--muted:#9ba5b6;
+  --brand:#fb923c;--brand-2:#f97316;--border:#283142;--head-from:#07090d;--head-to:#2a1409;--shadow:0 6px 22px rgba(0,0,0,.4);}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:var(--brand)}
+.container{max-width:1100px;margin-inline:auto;padding-inline:20px}
+
+header.top{background:linear-gradient(135deg,var(--head-from),var(--head-to));color:#fff}
+header.top .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.5rem;font-weight:800;letter-spacing:.02em;color:#fff;text-decoration:none}
+.logo svg{width:36px;height:36px}
+.logo small{font-weight:600;color:#fdba74}
+.back{color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.5);padding:8px 16px;border-radius:10px;font-weight:600;font-size:.92rem}
+.back:hover{background:rgba(255,255,255,.1)}
+.intro{padding-block:40px 56px}
+.intro h1{margin:0 0 10px;font-size:2.3rem;line-height:1.2}
+.intro p{margin:0;max-width:680px;color:#e5e7eb;font-size:1.08rem}
+
+.quick{margin-block-start:-30px}
+.quick nav{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px 18px;display:flex;flex-wrap:wrap;gap:8px}
+.quick a{text-decoration:none;color:var(--text);background:var(--surface-2);padding:7px 14px;border-radius:999px;font-size:.9rem;font-weight:600}
+.quick a:hover{background:var(--brand);color:#fff}
+
+section{padding-block:34px 8px}
+h2{font-size:1.45rem;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:6px;height:24px;border-radius:3px;background:var(--brand)}
+.lead{margin:0 0 18px;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:var(--text);transition:transform .2s,box-shadow .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--brand)}
+.card .ic{width:46px;height:46px;border-radius:12px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;color:var(--brand)}
+.card .ic svg{width:26px;height:26px}
+.card h3{margin:4px 0 0;font-size:1.08rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem;flex:1}
+.card .go{font-weight:700;color:var(--brand);font-size:.9rem}
+
+.company{display:grid;grid-template-columns:1.3fr 1fr;gap:18px}
+.box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.box h3{margin:0 0 12px}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:0}
+dt{color:var(--muted);font-weight:600}
+dd{margin:0}
+.box ul{margin:0;padding-inline-start:20px;display:grid;gap:6px}
+
+.notice{margin-block-start:22px;background:var(--surface-2);border-inline-start:4px solid var(--brand);border-radius:10px;padding:14px 18px;font-size:.92rem;color:var(--muted)}
+
+footer{margin-block-start:48px;background:var(--head-from);color:#9ca3af;font-size:.88rem}
+footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px}
+footer a{color:#fdba74}
+
+@media (max-width:900px){.grid{grid-template-columns:1fr 1fr}.company{grid-template-columns:1fr}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}.intro h1{font-size:1.8rem}dl{grid-template-columns:1fr}dt{margin-block-start:6px}}
+@media print{header.top{background:none;color:#000}.intro p{color:#000}.quick,.back{display:none}.card{break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M6 2h9l5 5v15H6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14 2v6h6M9 13h8M9 17h8"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 2 4 5v6c0 5 3.5 9.3 8 11 4.5-1.7 8-6 8-11V5z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-cookie" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M21 12a9 9 0 1 1-9-9 3 3 0 0 0 4 4 3 3 0 0 0 5 5z"/><circle cx="8.5" cy="10" r="1.2" fill="currentColor"/><circle cx="14" cy="15" r="1.2" fill="currentColor"/><circle cx="9" cy="15.5" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-return" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 9h11a5 5 0 0 1 0 10H8M4 9l4-4M4 9l4 4"/></symbol>
+  <symbol id="i-tool" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M14.5 3.5a4.5 4.5 0 0 0-5.6 5.6L3 15v3h3l5.9-5.9a4.5 4.5 0 0 0 5.6-5.6l-2.7 2.7-2.4-.6-.6-2.4z"/></symbol>
+  <symbol id="i-form" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8 8h8M8 12h8M8 16h4"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M2 6h12v10H2zM14 10h4l4 4v2h-8z"/><circle cx="6" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="18" r="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M7 21h10M4 7h16M7 7l-3 7a3 3 0 0 0 6 0zM17 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></symbol>
+  <symbol id="i-access" viewBox="0 0 24 24"><circle cx="12" cy="4.5" r="2" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 8.5l8 1.5 8-1.5M12 10v5l-3 6M12 15l3 6"/></symbol>
+  <symbol id="i-recycle" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 19H4l3.5-6M17 19h3l-3.5-6M9 6l3-4 3 4M8.5 13 12 7l3.5 6M7 19h10"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+</defs></svg>
+
+<header class="top">
+  <div class="container bar">
+    <!-- DOPLNIT: odkaz na hlavní stránku e-shopu -->
+    <a class="logo" href="https://www.fortyron.cz/">
+      <svg viewBox="0 0 24 24" style="color:#fb923c"><use href="#i-shield"/></svg>
+      <span>FORTYRON<small>.cz</small></span>
+    </a>
+    <a class="back" href="https://www.fortyron.cz/">← Zpět do e-shopu</a>
+  </div>
+  <div class="container intro">
+    <h1>Informace pro zákazníky</h1>
+    <p>Na jednom místě najdete všechny důležité dokumenty a informace o nákupu na Fortyron.cz – obchodní podmínky, ochranu osobních údajů, reklamace, vrácení zboží i kontakty.</p>
+  </div>
+</header>
+
+<div class="container quick">
+  <nav aria-label="Rychlá navigace">
+    <a href="#nakup">Nákup a dokumenty</a>
+    <a href="#soukromi">Soukromí</a>
+    <a href="#reklamace">Reklamace a vrácení</a>
+    <a href="#spory">Řešení sporů</a>
+    <a href="#kontakt">Kontakty a provozovatel</a>
+  </nav>
+</div>
+
+<main class="container">
+
+  <!-- ============ NÁKUP ============ -->
+  <section id="nakup">
+    <h2>Nákup a smluvní dokumenty</h2>
+    <p class="lead">Podmínky, za kterých u nás nakupujete.</p>
+    <div class="grid">
+      <!-- DOPLNIT: href -->
+      <a class="card" href="https://www.fortyron.cz/obchodni-podminky">
+        <span class="ic"><svg><use href="#i-doc"/></svg></span>
+        <h3>Obchodní podmínky</h3>
+        <p>Práva a povinnosti prodávajícího a kupujícího, uzavření kupní smlouvy, ceny a platební podmínky.</p>
+        <span class="go">Zobrazit dokument →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/doprava-a-platba">
+        <span class="ic"><svg><use href="#i-truck"/></svg></span>
+        <h3>Doprava a platba</h3>
+        <p>Způsoby doručení, ceny dopravy, dodací lhůty a dostupné platební metody.</p>
+        <span class="go">Zobrazit informace →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/overovani-recenzi">
+        <span class="ic"><svg><use href="#i-star"/></svg></span>
+        <h3>Ověřování recenzí</h3>
+        <p>Jak zajišťujeme, že zveřejněné recenze pocházejí od zákazníků, kteří produkt skutečně koupili.</p>
+        <span class="go">Zobrazit informace →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ SOUKROMÍ ============ -->
+  <section id="soukromi">
+    <h2>Ochrana soukromí</h2>
+    <p class="lead">Jak nakládáme s vašimi osobními údaji v souladu s GDPR.</p>
+    <div class="grid">
+      <a class="card" href="https://www.fortyron.cz/ochrana-osobnich-udaju">
+        <span class="ic"><svg><use href="#i-shield"/></svg></span>
+        <h3>Ochrana osobních údajů</h3>
+        <p>Jaké údaje zpracováváme, za jakým účelem, jak dlouho je uchováváme a jaká máte práva.</p>
+        <span class="go">Zobrazit dokument →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/cookies">
+        <span class="ic"><svg><use href="#i-cookie"/></svg></span>
+        <h3>Zásady cookies</h3>
+        <p>Jaké cookies web používá a jak můžete svůj souhlas kdykoli změnit nebo odvolat.</p>
+        <span class="go">Zobrazit dokument →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/pristupnost">
+        <span class="ic"><svg><use href="#i-access"/></svg></span>
+        <h3>Prohlášení o přístupnosti</h3>
+        <p>Informace o přístupnosti e-shopu pro osoby se zdravotním postižením a možnost nahlásit problém.</p>
+        <span class="go">Zobrazit prohlášení →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ REKLAMACE ============ -->
+  <section id="reklamace">
+    <h2>Reklamace, vrácení a záruka</h2>
+    <p class="lead">Co dělat, když zboží nevyhovuje nebo má vadu.</p>
+    <div class="grid">
+      <a class="card" href="https://www.fortyron.cz/reklamacni-rad">
+        <span class="ic"><svg><use href="#i-tool"/></svg></span>
+        <h3>Reklamační řád</h3>
+        <p>Práva z vadného plnění, postup reklamace, lhůty pro vyřízení a záruční podmínky.</p>
+        <span class="go">Zobrazit dokument →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/odstoupeni-od-smlouvy">
+        <span class="ic"><svg><use href="#i-return"/></svg></span>
+        <h3>Odstoupení od smlouvy</h3>
+        <p>Vrácení zboží do 14 dnů bez udání důvodu – postup, podmínky a vrácení peněz.</p>
+        <span class="go">Zobrazit informace →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/formulare">
+        <span class="ic"><svg><use href="#i-form"/></svg></span>
+        <h3>Formuláře ke stažení</h3>
+        <p>Vzorový formulář pro odstoupení od smlouvy a reklamační formulář.</p>
+        <span class="go">Stáhnout formuláře →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/zpetny-odber">
+        <span class="ic"><svg><use href="#i-recycle"/></svg></span>
+        <h3>Zpětný odběr elektrozařízení</h3>
+        <p>Kde a jak bezplatně odevzdat vysloužilé elektrospotřebiče a baterie.</p>
+        <span class="go">Zobrazit informace →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ SPORY ============ -->
+  <section id="spory">
+    <h2>Mimosoudní řešení sporů a dozor</h2>
+    <p class="lead">Pokud se s námi nedohodnete, můžete se obrátit na nezávislé instituce.</p>
+    <div class="grid">
+      <a class="card" href="https://adr.coi.cz/cs">
+        <span class="ic"><svg><use href="#i-scale"/></svg></span>
+        <h3>Česká obchodní inspekce – ADR</h3>
+        <p>Mimosoudní řešení spotřebitelských sporů. ČOI je zároveň dozorovým orgánem prodávajícího.</p>
+        <span class="go">Přejít na web ČOI →</span>
+      </a>
+      <a class="card" href="https://www.fortyron.cz/reseni-sporu">
+        <span class="ic"><svg><use href="#i-flag"/></svg></span>
+        <h3>Stížnosti a podněty</h3>
+        <p>Jak podat stížnost a jak ji vyřizujeme. Informace o dalších dozorových orgánech.</p>
+        <span class="go">Zobrazit informace →</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT ============ -->
+  <section id="kontakt">
+    <h2>Kontakty a provozovatel</h2>
+    <p class="lead">Údaje o provozovateli e-shopu a jak nás kontaktovat.</p>
+    <div class="company">
+      <div class="box">
+        <h3>Provozovatel</h3>
+        <!-- DOPLNIT: skutečné údaje provozovatele -->
+        <dl>
+          <dt>Obchodní firma</dt><dd>[Doplnit název firmy / jméno podnikatele]</dd>
+          <dt>Sídlo</dt><dd>[Doplnit ulici, PSČ a obec]</dd>
+          <dt>IČO</dt><dd>[Doplnit IČO]</dd>
+          <dt>DIČ</dt><dd>[Doplnit DIČ, pokud jste plátce DPH]</dd>
+          <dt>Zápis v rejstříku</dt><dd>[Doplnit spisovou značku, např. C 12345 vedená u Městského soudu v Praze / Živnostenský rejstřík]</dd>
+          <dt>Dozorový orgán</dt><dd>Česká obchodní inspekce, Štěpánská 15, 120 00 Praha 2</dd>
+        </dl>
+      </div>
+      <div class="box">
+        <h3>Kontakt</h3>
+        <dl>
+          <dt>E-mail</dt><dd>[info@fortyron.cz]</dd>
+          <dt>Telefon</dt><dd>[+420 000 000 000]</dd>
+          <dt>Zákaznická linka</dt><dd>[Po–Pá 9:00–17:00]</dd>
+          <dt>Adresa pro vrácení</dt><dd>[Doplnit adresu pro vracení a reklamace]</dd>
+        </dl>
+        <p style="margin:16px 0 0"><a class="card" style="padding:12px 16px;flex-direction:row;align-items:center" href="https://www.fortyron.cz/kontakt"><span class="ic" style="width:36px;height:36px"><svg><use href="#i-phone"/></svg></span><span class="go">Kontaktní stránka a formulář →</span></a></p>
+      </div>
+    </div>
+    <div class="notice">Ceny jsou uváděny včetně DPH. Informace na této stránce slouží jako přehled – závazné jsou vždy aktuální znění jednotlivých dokumentů.</div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Fortyron.cz · Všechna práva vyhrazena</span>
+    <span><a href="#nakup">Obchodní podmínky</a> · <a href="#soukromi">GDPR</a> · <a href="#kontakt">Kontakt</a></span>
+  </div>
+</footer>
+</body>
+</html>
